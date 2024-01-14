@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { databases, DATABASE_ID, COLLECTION_MESSAGES_ID } from '../appwriteConfig'
+import client, { databases, DATABASE_ID, COLLECTION_MESSAGES_ID } from '../appwriteConfig'
 import { ID, Query } from 'appwrite';
 import { Trash2 } from 'react-feather';
 
@@ -7,8 +7,28 @@ const Room = () => {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
 
+  //use effect hook
   useEffect(() => {
     getMessages()
+
+    const unsubscrbe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_MESSAGES_ID}.documents`, response => {
+      // Callback will be executed on changes for documents A and all files.
+      if(response.events.includes("databases.*.collections.*.documents.*.create")){
+        console.log("A Message Was Created!")
+        setMessages(prevState => [response.payload, ...prevState])
+      }
+
+      if(response.events.includes("databases.*.collections.*.documents.*.delete")){
+        console.log("A Message Was Deleted!!!!")
+        setMessages(prevState => prevState.filter(message => message.$id !== response.payload.$id))
+      }
+
+    });
+
+    //cleanup function
+    return () => {
+        unsubscrbe();
+    }
   }, [])
 
   const handleSubmit = async(e) => {
@@ -26,7 +46,7 @@ const Room = () => {
     )
     console.log("Created Message!", response)
 
-    setMessages(prevState => [response, ...message])
+    //setMessages(prevState => [response, ...prevState])
     setMessageBody('');
   }
 
@@ -44,7 +64,7 @@ const Room = () => {
 
   const deleteMessage = async (message_id) => {
     databases.deleteDocument(DATABASE_ID, COLLECTION_MESSAGES_ID, message_id);
-    setMessages(prevState => messages.filter(message => message.$id !== message_id))
+    //setMessages(prevState => prevState.filter(message => message.$id !== message_id))
   }
 
   return (
