@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import client, { databases, DATABASE_ID, COLLECTION_MESSAGES_ID } from '../appwriteConfig'
 import { ID, Query } from 'appwrite';
 import { Trash2 } from 'react-feather';
+import Header from '../components/Header';
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -69,6 +70,7 @@ const Room = () => {
 
   return (
     <main className='container'>
+              <Header />
       <div className='room--container'>
         <form onSubmit={handleSubmit} id='message--form'>
           <div>
