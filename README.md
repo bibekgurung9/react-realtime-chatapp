@@ -46,9 +46,10 @@ npm run dev
 In the .env file, you'll find the following variables that need to be configured:
 
 ```
+REACT_APP_DATABASE_ID:your-database-id
 REACT_APP_APPWRITE_ENDPOINT=https://your-appwrite-endpoint/api/v1
-REACT_APP_APPWRITE_PROJECT_ID=your-appwrite-project-id
-REACT_APP_APPWRITE_COLLECTION_ID=your-appwrite-collection-id
+REACT_APP_PROJECT_ID=your-appwrite-project-id
+REACT_APP_COLLECTION_MESSAGES_ID=your-appwrite-collection-id
 ```
 
 Make sure to replace the placeholder values with your actual Appwrite endpoint, project ID, and collection ID.
