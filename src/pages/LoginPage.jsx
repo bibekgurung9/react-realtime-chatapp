@@ -28,6 +28,7 @@ const LoginPage = () => {
   return (
     <div className='auth--container'>
       <div className='form--wrapper'>
+      <h1>Login Page</h1>
         <form onSubmit={(e) => {handleUserLogin(e, credentials)}} className=''>
           <div className='field--wrapper'>
             <label htmlFor="">Email: </label>

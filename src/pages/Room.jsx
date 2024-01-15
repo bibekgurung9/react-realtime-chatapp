@@ -11,12 +11,12 @@ const Room = () => {
   const [messages, setMessages] = useState([]);
   const [messageBody, setMessageBody] = useState('');
 
-  //use effect hook
   useEffect(() => {
+    // Fetch initial messages and subscribe to changes
     getMessages()
 
     const unsubscrbe = client.subscribe(`databases.${DATABASE_ID}.collections.${COLLECTION_MESSAGES_ID}.documents`, response => {
-      // Callback will be executed on changes for documents A and all files.
+      // Callback will be executed on changes for documents & all files
       if(response.events.includes("databases.*.collections.*.documents.*.create")){
         console.log("A Message Was Created!")
         setMessages(prevState => [response.payload, ...prevState])
@@ -28,7 +28,6 @@ const Room = () => {
       }
 
     });
-
     //cleanup function
     return () => {
         unsubscrbe();
@@ -57,12 +56,12 @@ const Room = () => {
       permissions,
     )
     console.log("Created Message!", response)
-
     //setMessages(prevState => [response, ...prevState])
     setMessageBody('');
   }
 
   const getMessages = async () => {
+     // Fetch the latest messages
     const response = await databases.listDocuments(
         DATABASE_ID, 
         COLLECTION_MESSAGES_ID,
@@ -75,8 +74,8 @@ const Room = () => {
   }
 
   const deleteMessage = async (message_id) => {
+    // Delete a message by ID
     databases.deleteDocument(DATABASE_ID, COLLECTION_MESSAGES_ID, message_id);
-    //setMessages(prevState => prevState.filter(message => message.$id !== message_id))
   }
 
   return (

@@ -1,13 +1,13 @@
 /* Global settings */
 
 :root{
-  --mainBgColor:rgba(20,20,31,11);
+  --mainBgColor:rgb(21, 24, 19);
   --secondaryBgColor:rgba(27,27,39,1);
   --borderColor1:rgba(40,41,57,1);
   --borderColor2:rgba(79,86,105,1);
   --textColorMain:#fff;
   --textColorSecondary:rgb(226, 227, 232);
-  --themeColorMain:rgba(219,26,90,1);
+  --themeColorMain:rgb(225, 1, 50);
   --themeColorSecondary:#386fd2;
 }
 
@@ -88,7 +88,7 @@ padding: 1em 2em;
 }
 
 .btn--main{
-background-color: rgba(219,26,90,1);
+background-color: var(--themeColorMain);
 color: #fff;
 }
 

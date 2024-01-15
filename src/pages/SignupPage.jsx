@@ -20,6 +20,7 @@ const SignupPage = () => {
   return (
       <div className='auth--container'>
       <div className='form--wrapper'>
+        <h1>SignUp Page</h1>
         <form onSubmit={(e) => {handleUserSignup(e, credentials)}} className=''>
         <div className='field--wrapper'>
             <label htmlFor="">Name: </label>
