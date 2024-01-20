@@ -20,7 +20,7 @@ const SignupPage = () => {
   return (
       <div className='auth--container'>
       <div className='form--wrapper'>
-        <h1  className='form--header'>SignUp Page</h1>
+        <h1  className='form--header'>Sign Up Page</h1>
         <form onSubmit={(e) => {handleUserSignup(e, credentials)}} className=''>
         <div className='field--wrapper'>
             <label className='form--input'>Name: </label>
@@ -76,7 +76,7 @@ const SignupPage = () => {
                   required
                   name='Signup'
                   className='btn btn--lg btn--main'
-                  value='Login'
+                  value='Sign Up'
                   onChange={handleInputChange}
                   />
           </div>
