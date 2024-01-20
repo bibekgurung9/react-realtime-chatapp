@@ -10,9 +10,9 @@ This repository contains a real-time chat application built using React, Vite, a
 - **Responsive Design**: Ensure a seamless experience across various devices.
 
 ### Screenshots
-![Login Page] (https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231712.png)
-![Sign Up Page] (https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231739.png)
-![Chatroom Page] (https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231800.png)
+![Login Page](https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231712.png)
+![Sign Up Page](https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231739.png)
+![Chatroom Page](https://raw.githubusercontent.com/bibekgurung9/react-realtime-chatapp/b71aaa56383182cc00214a370ec46f49840a4154/Screenshot%202024-01-20%20231800.png)
 
 ### Technologies Used
 - **React**: A JavaScript library for building user interfaces.
