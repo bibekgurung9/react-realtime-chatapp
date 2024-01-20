@@ -20,10 +20,10 @@ const SignupPage = () => {
   return (
       <div className='auth--container'>
       <div className='form--wrapper'>
-        <h1>SignUp Page</h1>
+        <h1  className='form--header'>SignUp Page</h1>
         <form onSubmit={(e) => {handleUserSignup(e, credentials)}} className=''>
         <div className='field--wrapper'>
-            <label htmlFor="">Name: </label>
+            <label className='form--input'>Name: </label>
             <input 
                   type="text"
                   required
@@ -35,7 +35,7 @@ const SignupPage = () => {
                   />
           </div>
           <div className='field--wrapper'>
-            <label htmlFor="">Email: </label>
+            <label className='form--input'>Email: </label>
             <input 
                   type="email"
                   required
@@ -47,7 +47,7 @@ const SignupPage = () => {
                   />
           </div>
           <div className='field--wrapper'>
-            <label htmlFor="">Password: </label>
+            <label className='form--input'>Password: </label>
             <input 
                   type="password"
                   required
@@ -59,7 +59,7 @@ const SignupPage = () => {
                   />
           </div>
           <div className='field--wrapper'>
-            <label htmlFor="">Confirm Password: </label>
+            <label className='form--input'>Confirm Password: </label>
             <input 
                   type="password"
                   required
@@ -82,7 +82,7 @@ const SignupPage = () => {
           </div>
         </form>
 
-        <p>Already Have An Account? Login <Link to
+        <p className='form-link'>Already Have An Account? Login <Link to
         ='/login'>Here</Link></p>
       </div>
     </div>

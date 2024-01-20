@@ -23,15 +23,13 @@ const LoginPage = () => {
     setCredentials({...credentials, [name]:value})
   }
 
-
-
   return (
     <div className='auth--container'>
       <div className='form--wrapper'>
-      <h1>Login Page</h1>
+      <h1 className='form--header'>Login Page</h1>
         <form onSubmit={(e) => {handleUserLogin(e, credentials)}} className=''>
           <div className='field--wrapper'>
-            <label htmlFor="">Email: </label>
+            <label className='form--input'>Email: </label>
             <input 
                   type="email"
                   required
@@ -43,7 +41,7 @@ const LoginPage = () => {
                   />
           </div>
           <div className='field--wrapper'>
-            <label htmlFor="">Passowrd: </label>
+            <label className='form--input'>Password: </label>
             <input 
                   type="password"
                   required
@@ -66,8 +64,8 @@ const LoginPage = () => {
           </div>
         </form>
 
-        <p>Don't Have An Account? Signup <Link to
-        ='/signup'>Here</Link></p>
+        <p className='form-link'>Don't Have An Account? Signup <Link to
+        ='/signup' >Here</Link></p>
       </div>
     </div>
   )
