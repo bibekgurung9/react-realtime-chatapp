@@ -18,7 +18,7 @@ This repository contains a real-time chat application built using React, Vite, a
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/react-appwrite-chat.git
+git clone https://github.com/bibekgurung9/react-realtime-chatapp
 ```
 2. Navigate to the project directory:
 ```
