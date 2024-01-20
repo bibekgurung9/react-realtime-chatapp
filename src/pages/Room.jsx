@@ -37,6 +37,11 @@ const Room = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
 
+    // Check if messageBody is empty
+    if (!messageBody.trim()) {
+      return;
+    }
+
     let payload = {
       user_id:user.$id,
       user_name:user.name,
@@ -78,6 +83,13 @@ const Room = () => {
     databases.deleteDocument(DATABASE_ID, COLLECTION_MESSAGES_ID, message_id);
   }
 
+  const handleKeyDown =  (e) => {
+    if(e.key === 'Enter' && !e.shiftkey){
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
   return (
     <main className='container'>
             <Header />
@@ -90,6 +102,7 @@ const Room = () => {
                 placeholder='Say Something....'
                 onChange={(e) => {setMessageBody(e.target.value)}}
                 value={messageBody}
+                onKeyDown={handleKeyDown}
                 ></textarea>
           </div>
           
