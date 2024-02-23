@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth } from '../utils/AuthContext'
 import { Link } from 'react-router-dom'
 
@@ -15,6 +15,10 @@ const SignupPage = () => {
     let name = e.target.name
     let value = e.target.value
     setCredentials({...credentials, [name]:value})
+  }
+
+  const diplayFull = () => {
+    alert("Adding New Users Has Been Disabled. Please use the demo accounts in the login page to use this project.")
   }
 
   return (
@@ -52,7 +56,7 @@ const SignupPage = () => {
                   type="password"
                   required
                   name='password1'
-                  placeholder='Enter Your password...'
+                  placeholder='Enter Your Password...'
                   value={credentials.password1}
                   onChange={handleInputChange}
                   
@@ -64,7 +68,7 @@ const SignupPage = () => {
                   type="password"
                   required
                   name='password2'
-                  placeholder='Enter Your password...'
+                  placeholder='Enter Your Password...'
                   value={credentials.password2}
                   onChange={handleInputChange}
                   
@@ -78,6 +82,7 @@ const SignupPage = () => {
                   className='btn btn--lg btn--main'
                   value='Sign Up'
                   onChange={handleInputChange}
+                  onClick={diplayFull}
                   />
           </div>
         </form>

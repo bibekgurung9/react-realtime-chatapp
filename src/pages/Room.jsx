@@ -71,7 +71,7 @@ const Room = () => {
         DATABASE_ID, 
         COLLECTION_MESSAGES_ID,
       [
-        Query.orderAsc('$createdAt'),
+        Query.orderDesc('$createdAt'),
         Query.limit(10),
       ])
     console.log("Response: ", response);
@@ -130,7 +130,7 @@ const Room = () => {
                 )}
                 
               </div>
-              <div  className='message--body'>
+              <div className={`message--body ${message.user_id === user.$id ? 'user-message' : 'other-message'}`}>
               <span>{message.body}</span>
               </div>
             </div>

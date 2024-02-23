@@ -25,6 +25,20 @@ const LoginPage = () => {
 
   return (
     <div className='auth--container'>
+      <div className='demo--id'>
+        <h2>Please use the demo accounts. <br /> As creating new accounts has been disabled for the demo.</h2>
+        <div className='demo'>
+          <h3>Demo Account 1</h3>
+          <p><span>Email:</span> demouser1@email.com</p>
+          <p><span>Password:</span> Demouser1</p>        
+        </div>
+        <div className='demo'>
+          <h3>Demo Account 1</h3>
+          <p><span>Email:</span> demouser2@email.com</p>
+          <p><span>Password:</span> Demouser2</p>        
+        </div>
+      </div>
+
       <div className='form--wrapper'>
       <h1 className='form--header'>Login Page</h1>
         <form onSubmit={(e) => {handleUserLogin(e, credentials)}} className=''>
@@ -46,7 +60,7 @@ const LoginPage = () => {
                   type="password"
                   required
                   name='password'
-                  placeholder='Enter Your password...'
+                  placeholder='Enter Your Password...'
                   value={credentials.password}
                   onChange={handleInputChange}
                   
